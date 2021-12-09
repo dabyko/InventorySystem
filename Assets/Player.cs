@@ -15,7 +15,18 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            inventory.Save();
+        }
 
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            inventory.Load();
+        }
+    }
     private void OnApplicationQuit()
     {
         inventory.container.Clear();
